@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Social media dashboard with theme switcher</title>
@@ -11,84 +12,82 @@
 </head>
 
 <body>
-  <div class="page">
-    <div class="container">
-      <header class="header">
-        <div class="header-text">
-          <h1>Social Media Dashboard</h1>
-          <p>Total Followers: 23,004</p>
-        </div>
-        <input type="checkbox" class="theme-switcher" id="switch" onchange="toggleTheme()"></input>
-      </header>
-      <main>
-        <section class="followers-list">
-          <a href="#" class="card card-followers card-facebook">
-            <div class="card-title">
-              <img src="images/icon-facebook.svg" alt="Facebook"></img>
-              <span class="card-title--name">@nathanf</span>
-            </div>
-            <div class="card-followers-count">
-              <p class="card-count">1987</p>
-              <span class="count-name">Followers</span>
-            </div>
-            <div class="card-reaction reaction-up">
-              <img src="images/icon-up.svg" alt="">
-              <span class="today-reaction">12 Today</span>
-            </div>
-          </a>
+  <div class="container">
+    <header class="header">
+      <div class="header-text">
+        <h1>Social Media Dashboard</h1>
+        <p>Total Followers: 23,004</p>
+      </div>
+      <input type="checkbox" class="theme-switcher" id="switch" onchange="toggleTheme()"></input>
+    </header>
+    <main>
+      <section class="followers-list">
+        <a href="#" class="card card-followers card-facebook">
+          <div class="card-title">
+            <img src="images/icon-facebook.svg" alt="Facebook"></img>
+            <span class="card-title--name">@nathanf</span>
+          </div>
+          <div class="card-followers-count">
+            <p class="card-count">1987</p>
+            <span class="count-name">Followers</span>
+          </div>
+          <div class="card-reaction reaction-up">
+            <img src="images/icon-up.svg" alt="">
+            <span class="today-reaction">12 Today</span>
+          </div>
+        </a>
 
-          <a href="#" class="card card-followers card-twitter">
-            <div class="card-title">
-              <img src="images/icon-twitter.svg" alt="Twitter"></img>
-              <span class="card-title--name">@nathanf</span>
-            </div>
-            <div class="card-followers-count">
-              <p class="card-count">1044</p>
-              <span class="count-name">Followers</span>
-            </div>
-            <div class="card-reaction reaction-up">
-              <img src="images/icon-up.svg" alt="">
-              <span class="today-reaction">99 Today</span>
-            </div>
-          </a>
+        <a href="#" class="card card-followers card-twitter">
+          <div class="card-title">
+            <img src="images/icon-twitter.svg" alt="Twitter"></img>
+            <span class="card-title--name">@nathanf</span>
+          </div>
+          <div class="card-followers-count">
+            <p class="card-count">1044</p>
+            <span class="count-name">Followers</span>
+          </div>
+          <div class="card-reaction reaction-up">
+            <img src="images/icon-up.svg" alt="">
+            <span class="today-reaction">99 Today</span>
+          </div>
+        </a>
 
-          <a href="#" class="card card-followers card-instagram">
-            <div class="card-title">
-              <img src="images/icon-instagram.svg" alt="Instagram"></img>
-              <span class="card-title--name">@realnathanf</span>
-            </div>
-            <div class="card-followers-count">
-              <p class="card-count">1099</p>
-              <span class="count-name">Followers</span>
-            </div>
-            <div class="card-reaction reaction-up">
-              <img src="images/icon-up.svg" alt="">
-              <span class="today-reaction">12 Today</span>
-            </div>
-          </a>
+        <a href="#" class="card card-followers card-instagram">
+          <div class="card-title">
+            <img src="images/icon-instagram.svg" alt="Instagram"></img>
+            <span class="card-title--name">@realnathanf</span>
+          </div>
+          <div class="card-followers-count">
+            <p class="card-count">1099</p>
+            <span class="count-name">Followers</span>
+          </div>
+          <div class="card-reaction reaction-up">
+            <img src="images/icon-up.svg" alt="">
+            <span class="today-reaction">12 Today</span>
+          </div>
+        </a>
 
-          <a href="#" class="card card-followers card-youtube">
-            <div class="card-title">
-              <img src="images/icon-youtube.svg" alt="Facebook"></img>
-              <span class="card-title--name">@Nathan F.</span>
-            </div>
-            <div class="card-followers-count">
-              <p class="card-count">8239</p>
-              <span class="count-name">Subscribers</span>
-            </div>
-            <div class="card-reaction reaction-down">
-              <img src="images/icon-down.svg" alt="">
-              <span class="today-reaction">144 Today</span>
-            </div>
-          </a>
-        </section>
-      </main>
-    </div>
-    <!-- <div class="attribution">
+        <a href="#" class="card card-followers card-youtube">
+          <div class="card-title">
+            <img src="images/icon-youtube.svg" alt="Facebook"></img>
+            <span class="card-title--name">@Nathan F.</span>
+          </div>
+          <div class="card-followers-count">
+            <p class="card-count">8239</p>
+            <span class="count-name">Subscribers</span>
+          </div>
+          <div class="card-reaction reaction-down">
+            <img src="images/icon-down.svg" alt="">
+            <span class="today-reaction">144 Today</span>
+          </div>
+        </a>
+      </section>
+    </main>
+  </div>
+  <!-- <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">northwatch</a>.
     </div> -->
-  </div>
 
   <script>
     function setTheme(themeName) {
