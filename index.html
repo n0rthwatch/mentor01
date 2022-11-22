@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-dark">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -18,7 +18,13 @@
         <h1>Social Media Dashboard</h1>
         <p>Total Followers: 23,004</p>
       </div>
-      <input type="checkbox" class="theme-switcher" id="switch" onchange="toggleTheme()"></input>
+      <div class="toggle-switcher">
+        <span class="switcher-text">Dark mode</span>
+        <label class="switch-switcher">
+          <input type="checkbox" class="theme-switcher" id="switch" onchange="toggleTheme()"></input>
+          <span class="switcher-slider"></span>
+        </label>
+      </div>
     </header>
     <main>
       <section class="followers-list">
@@ -82,14 +88,134 @@
           </div>
         </a>
       </section>
+      <section class="overview">
+        <h2 class="overview-title">Overview - Today</h2>
+        <div class="overview-list">
+          <a href="#" class="card card-overview">
+            <div class="card-title">
+              <span class="card-title--name">Page Views</span>
+              <img src="images/icon-facebook.svg" alt="Facebook">
+            </div>
+            <div class="overview-card-body">
+              <p class="card-count">87</p>
+              <div class="card-reaction reaction-up">
+                <img src="images/icon-up.svg">
+                <span class="overview-reaction">3%</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="card card-overview">
+            <div class="card-title">
+              <span class="card-title--name">Likes</span>
+              <img src="images/icon-facebook.svg" alt="Facebook">
+            </div>
+            <div class="overview-card-body">
+              <p class="card-count">52</p>
+              <div class="card-reaction reaction-down">
+                <img src="images/icon-down.svg">
+                <span class="overview-reaction">2%</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="card card-overview">
+            <div class="card-title">
+              <span class="card-title--name">Likes</span>
+              <img src="images/icon-instagram.svg" alt="Instagram">
+            </div>
+            <div class="overview-card-body">
+              <p class="card-count">5462</p>
+              <div class="card-reaction reaction-up">
+                <img src="images/icon-up.svg">
+                <span class="overview-reaction">2257%</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="card card-overview">
+            <div class="card-title">
+              <span class="card-title--name">Profile Views</span>
+              <img src="images/icon-instagram.svg" alt="Instagram">
+            </div>
+            <div class="overview-card-body">
+              <p class="card-count">52k</p>
+              <div class="card-reaction reaction-up">
+                <img src="images/icon-up.svg">
+                <span class="overview-reaction">1375%</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="card card-overview">
+            <div class="card-title">
+              <span class="card-title--name">Retweets</span>
+              <img src="images/icon-twitter.svg" alt="Twitter">
+            </div>
+            <div class="overview-card-body">
+              <p class="card-count">117</p>
+              <div class="card-reaction reaction-up">
+                <img src="images/icon-up.svg">
+                <span class="overview-reaction">303%</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="card card-overview">
+            <div class="card-title">
+              <span class="card-title--name">Likes</span>
+              <img src="images/icon-twitter.svg" alt="Twitter">
+            </div>
+            <div class="overview-card-body">
+              <p class="card-count">507</p>
+              <div class="card-reaction reaction-up">
+                <img src="images/icon-up.svg">
+                <span class="overview-reaction">553%</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="card card-overview">
+            <div class="card-title">
+              <span class="card-title--name">Likes</span>
+              <img src="images/icon-youtube.svg" alt="Youtube">
+            </div>
+            <div class="overview-card-body">
+              <p class="card-count">107</p>
+              <div class="card-reaction reaction-down">
+                <img src="images/icon-down.svg">
+                <span class="overview-reaction">19%</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="card card-overview">
+            <div class="card-title">
+              <span class="card-title--name">Total Views</span>
+              <img src="images/icon-youtube.svg" alt="Youtube">
+            </div>
+            <div class="overview-card-body">
+              <p class="card-count">1407</p>
+              <div class="card-reaction reaction-down">
+                <img src="images/icon-down.svg">
+                <span class="overview-reaction">12%</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/potiroot">northwatch</a>.
+      </div>
     </main>
   </div>
-  <!-- <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">northwatch</a>.
-    </div> -->
 
   <script>
+    let switcher = document.getElementById('switch')
+    setThemeOnLoad()
+
+    function setThemeOnLoad() {
+      if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+        switcher.toggleAttribute('checked')
+      } else {
+        setTheme('theme-light');
+      }
+    }; // устанавливает тему при загрузке страницы (немедленно)
     function setTheme(themeName) {
       localStorage.setItem('theme', themeName);
       document.documentElement.className = themeName;
@@ -102,14 +228,6 @@
         setTheme('theme-dark');
       }
     } // переключение между светлой и тёмной темой
-
-    (function () {
-      if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-dark');
-      } else {
-        setTheme('theme-light');
-      }
-    }); // устанавливает тему при загрузке страницы (немедленно)
   </script>
 
 </body>
